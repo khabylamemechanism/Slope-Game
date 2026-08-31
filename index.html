@@ -1,4 +1,24 @@
 <head>
+<script>
+  // 1. Change the tab title and icon to look like Google Docs
+  document.title = "Google Docs - History Essay";
+  
+  var link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+  link.rel = 'icon';
+  link.href = 'https://gstatic.com'; // Real Google Docs icon
+  document.getElementsByTagName('head')[0].appendChild(link);
+
+  // 2. The Panic Button: Press 'Esc' to instantly hide the game
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      // Wipes out the webpage content instantly and displays blank text
+      document.body.innerHTML = '<div style="font-family:Arial; padding:50px; color:#333;"><h3>Document saved to cloud. Connection lost.</h3><p>Please refresh to reconnect to Google Drive.</p></div>';
+      document.body.style.background = '#ffffff';
+    }
+  });
+</script>
+
+
 <!-- Adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8024356722027062"
      crossorigin="anonymous"></script>
